@@ -1,0 +1,2 @@
+currency f, g(plus, 3, 45), h(minus, 10);
+currency *m = new currency(plus, 8, 12);
