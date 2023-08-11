@@ -1,0 +1,21 @@
+void createSunshine() {
+    int ballMax = sizeof(balls) / sizeof(balls[0]);
+ 
+    static int frameCount = 0;
+    static int fre = 400;
+    frameCount++;
+    if (frameCount >= fre) {
+        fre = 200 + rand() % 200;  
+        frameCount = 0;
+        int i;
+        for (i = 0; i < ballMax && balls[i].used; i++);
+        if (i >= ballMax) return;
+ 
+        balls[i].used = true;
+        balls[i].frameIndex = 0;
+        balls[i].x = 260 + rand() % (905 - 260);
+        balls[i].y = 60;
+        balls[i].destY = 180 + (rand() % 4) * 90 + 20;
+        balls[i].timer = 0;
+    }
+}
